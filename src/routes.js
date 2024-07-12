@@ -4,16 +4,19 @@ import Pie from "components/Pie";
 import Favoritos from "pages/Favoritos";
 import Inicio from "pages/Inicio";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import FavoritoProvider from "./components/Context/Favorito";
 
 function AppRoutes() {
     return (
         <BrowserRouter>
             <Cabecera/>
             <Container>
-                <Routes>
-                    <Route path="/" element={<Inicio/>}></Route>
-                    <Route path="/favoritos" element={<Favoritos/>}></Route>
-                </Routes>
+                <FavoritoProvider>
+                    <Routes>
+                        <Route path="/" element={<Inicio/>}></Route>
+                        <Route path="/favoritos" element={<Favoritos/>}></Route>
+                    </Routes>
+                </FavoritoProvider>
             </Container>
             <Pie/>
         </BrowserRouter>
