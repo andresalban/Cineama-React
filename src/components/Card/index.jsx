@@ -1,10 +1,11 @@
-import styles from "./Card.module.css"
-import iconFavorito from "./iconFavorito.png"
-import iconNoFavorito from "./iconNoFavorito.png"
-import {useFavoritosContext} from "../Context/Favorito";
+import styles from "./Card.module.css";
+import iconFavorito from "./iconFavorito.png";
+import iconNoFavorito from "./iconNoFavorito.png";
 import {Link} from "react-router-dom";
+import {useFavoritosContext} from "../Context/Favorito";
 
 function Card({id, capa, titulo}) {
+
     const {favorito, agregarFavorito} = useFavoritosContext()
     const isFavorito = favorito.some(fav => fav.id === id)
     const icon = isFavorito ? iconFavorito : iconNoFavorito
@@ -21,9 +22,8 @@ function Card({id, capa, titulo}) {
                 className={styles.favorito}
                 onClick={() => agregarFavorito({id, titulo, capa})}
             />
-
         </div>
-    )
+    );
 }
 
-export default Card
+export default Card;

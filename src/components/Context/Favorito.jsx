@@ -21,14 +21,15 @@ export function useFavoritosContext() {
         const favoritosRepetido = favorito.some(
             (item) => item.id === nuevoFavorito.id
         )
-    let nuevaLista=[...favorito]
-        if(!favoritosRepetido){
+        let nuevaLista = [...favorito]
+        if (!favoritosRepetido) {
             nuevaLista.push(nuevoFavorito)
             return setFavorito(nuevaLista)
         }
 
-        nuevaLista=favorito.filter(item => item.id !== nuevoFavorito.id)
+        nuevaLista = favorito.filter(item => item.id !== nuevoFavorito.id)
         return setFavorito(nuevaLista)
     }
-    return {favorito,agregarFavorito}
+
+    return {favorito, agregarFavorito}
 }

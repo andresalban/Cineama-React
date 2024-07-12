@@ -1,9 +1,9 @@
 import Favoritos from "pages/Favoritos";
 import Inicio from "pages/Inicio";
+import NotFound from "pages/NotFound";
+import PaginaBase from "pages/PaginaBase";
+import Player from "pages/Player";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Player from "./pages/Player";
-import NotFound from "./pages/NotFound";
-import PaginaBase from "./pages/PaginaBase";
 
 function AppRoutes() {
     return (
